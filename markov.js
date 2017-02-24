@@ -429,6 +429,7 @@ function generate() {
   }
 
   var text = words.join(" ");
+  text = resolvePlaceholders(text);
   return text[0].toUpperCase() + text.slice(1) + ".";
 }
 
@@ -440,6 +441,52 @@ function generateOnSteroids() {
   return text;
 }
 
-for (var i = 0; i < 10; i++) {
-  console.log(generateOnSteroids());
+function resolvePlaceholders(string) {
+  return string.replace(/\{{2,3}(\w+?)\}{2,3}/g, function($0, type) {
+    if (typeof PLACEHOLDERS[type] === "function") {
+      return PLACEHOLDERS[type]();
+    }
+    return $0;
+  });
+}
+
+var PLACEHOLDERS = {
+  count: function() {
+    return Math.floor(Math.random() * 10)
+  },
+  linenumber: function() {
+    return Math.floor(Math.random() * 200);
+  },
+  name: function() {
+    return randomChoice(['foo', 'bar', 'baz', 'qux', 'quux']);
+  },
+  operator: function() {
+    return randomChoice([
+      '=', '+', '-', '/', '*', '%', '**', '<<',
+      '>>', '>>>', '&', '^', '|', '==', '!=', '===',
+      '!==', '>', '>=', '<', '<=', '++', '--', '~',
+      '&&', '||', '!'
+    ]);
+  },
+  type: function() {
+    return randomChoice([
+      "undefined", "null", "boolean", "number",
+      "string", "symbol", "function", "object"
+    ]);
+  }
+};
+PLACEHOLDERS.actualoperator = PLACEHOLDERS.expectedoperator =
+  PLACEHOLDERS.operator;
+PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
+  PLACEHOLDERS.maxlength = PLACEHOLDERS.maxcommentlength =
+  PLACEHOLDERS.max = PLACEHOLDERS.count
+PLACEHOLDERS.funcname = PLACEHOLDERS.prevname =
+  PLACEHOLDERS.objectname = PLACEHOLDERS.propertyname =
+  PLACEHOLDERS.idname = PLACEHOLDERS.name;
+PLACEHOLDERS.expectedtype = PLACEHOLDERS.currenttype =
+  PLACEHOLDERS.type;
+
+if (typeof process !== 'undefined') {
+  // Running in Node.js
+  console.log(generate);
 }
