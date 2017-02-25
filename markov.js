@@ -481,7 +481,9 @@ PLACEHOLDERS.actualoperator = PLACEHOLDERS.expectedoperator =
   PLACEHOLDERS.operator;
 PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
   PLACEHOLDERS.maxlength = PLACEHOLDERS.maxcommentlength =
-  PLACEHOLDERS.max = PLACEHOLDERS.count;
+  PLACEHOLDERS.numberofstatementsonthisline =
+  PLACEHOLDERS.maxstatementsperline = PLACEHOLDERS.max =
+  PLACEHOLDERS.count;
 PLACEHOLDERS.funcname = PLACEHOLDERS.prevname =
   PLACEHOLDERS.objectname = PLACEHOLDERS.propertyname =
   PLACEHOLDERS.idname = PLACEHOLDERS.name;
