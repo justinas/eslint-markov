@@ -490,5 +490,5 @@ PLACEHOLDERS.expectedtype = PLACEHOLDERS.currenttype =
 
 if (typeof process !== 'undefined') {
   // Running in Node.js
-  console.log(generate);
+  console.log(generate());
 }
