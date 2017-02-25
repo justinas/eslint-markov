@@ -392,23 +392,6 @@ MESSAGES.forEach(function(el) {
     }
     chains[key].push(words[i+1] || "");
   }
-  /*
-  if (words[1]) {
-    var key = ["", words[0]].join(" ");
-    if (!chains[key]) {
-      chains[key] = [];
-    }
-    chains[key].push(words[1]);
-  }
-
-  for (var i = 0; i < words.length-1; i++) {
-    var curr = words.slice(i, i+2).join(" ");
-    if (!chains[curr]) {
-      chains[curr] = []
-    }
-    chains[curr].push(words[i+2] || "");
-  }
-  */
 });
 
 function randomChoice(arr) {
