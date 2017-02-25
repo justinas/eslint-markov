@@ -490,6 +490,7 @@ PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
 PLACEHOLDERS.funcname = PLACEHOLDERS.prevname =
   PLACEHOLDERS.objectname = PLACEHOLDERS.propertyname =
   PLACEHOLDERS.propname = PLACEHOLDERS.idname =
+  PLACEHOLDERS.thisname = PLACEHOLDERS.prevname =
   PLACEHOLDERS.name;
 PLACEHOLDERS.expectedtype = PLACEHOLDERS.currenttype =
   PLACEHOLDERS.type;
