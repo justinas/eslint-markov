@@ -378,8 +378,10 @@ var MESSAGES = [
 var chains = Object.create(null)
 chains[""] = [];
 
-MESSAGES.forEach((el) => {
-  var words = el.split(" ").map(w => w.toLowerCase());
+MESSAGES.forEach(function(el) {
+  var words = el.split(" ").map(function(w) {
+    return w.toLowerCase()
+  });
   if (words[0]) {
     chains[""].push(words[0]);
   }
