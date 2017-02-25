@@ -375,12 +375,12 @@ var MESSAGES = [
   "Unexpected alias '{{name}}' for 'this'"
 ].slice(0, 200);
 
-var chains = Object.create(null)
+var chains = Object.create(null);
 chains[""] = [];
 
 MESSAGES.forEach(function(el) {
   var words = el.split(" ").map(function(w) {
-    return w.toLowerCase()
+    return w.toLowerCase();
   });
   if (words[0]) {
     chains[""].push(words[0]);
@@ -412,7 +412,7 @@ MESSAGES.forEach(function(el) {
 });
 
 function randomChoice(arr) {
-    return arr[Math.floor(arr.length * Math.random())];
+  return arr[Math.floor(arr.length * Math.random())];
 }
 
 function generate() {
@@ -421,9 +421,9 @@ function generate() {
   var key = "";
   words.push(randomChoice(chains[key]));
 
-  while (true) {
+  for (;;) {
     key = words[words.length-1];
-    choice = randomChoice(chains[key]);
+    var choice = randomChoice(chains[key]);
     if (choice === "") {
       break;
     }
@@ -435,7 +435,7 @@ function generate() {
   return text[0].toUpperCase() + text.slice(1) + ".";
 }
 
-function generateOnSteroids() {
+function generateOnSteroids() { // eslint-disable-line no-unused-vars
   var text = generate();
   while (text.split(" ").length < 5) {
     text = generate();
@@ -454,7 +454,7 @@ function resolvePlaceholders(string) {
 
 var PLACEHOLDERS = {
   count: function() {
-    return Math.floor(Math.random() * 10)
+    return Math.floor(Math.random() * 10);
   },
   linenumber: function() {
     return Math.floor(Math.random() * 200);
@@ -481,7 +481,7 @@ PLACEHOLDERS.actualoperator = PLACEHOLDERS.expectedoperator =
   PLACEHOLDERS.operator;
 PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
   PLACEHOLDERS.maxlength = PLACEHOLDERS.maxcommentlength =
-  PLACEHOLDERS.max = PLACEHOLDERS.count
+  PLACEHOLDERS.max = PLACEHOLDERS.count;
 PLACEHOLDERS.funcname = PLACEHOLDERS.prevname =
   PLACEHOLDERS.objectname = PLACEHOLDERS.propertyname =
   PLACEHOLDERS.idname = PLACEHOLDERS.name;
@@ -490,5 +490,5 @@ PLACEHOLDERS.expectedtype = PLACEHOLDERS.currenttype =
 
 if (typeof process !== 'undefined') {
   // Running in Node.js
-  console.log(generate());
+  console.log(generate()); // eslint-disable-line no-console
 }
