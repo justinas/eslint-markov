@@ -2,7 +2,7 @@
 
 What if ESLint had an infinite number of rules?
 
-[Live demo](http://url)
+[Live demo](http://justinas.github.io/eslint-markov/)
 
 ## FAQ
 
