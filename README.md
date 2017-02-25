@@ -6,6 +6,10 @@ What if ESLint had an infinite number of rules?
 
 ## FAQ
 
+### What is this?
+A Markov chain generator based on ESLint rule messages
+with some added bells and whistles.
+
 ### Why?
 Because I've been writing JavaScript for the past few weeks
 and ESLint is now my best friend and my mortal enemy at the same time.
