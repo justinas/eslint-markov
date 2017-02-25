@@ -436,11 +436,14 @@ function generate() {
 }
 
 function generateOnSteroids() { // eslint-disable-line no-unused-vars
-  var text = generate();
-  while (text.split(" ").length < 5) {
-    text = generate();
+  for (;;) {
+    var text = generate();
+    // Artificially skip some short chains.
+    // Getting five 2-word rules in a row is not fun.
+    if (text.split(" ").length >= 5 || Math.random() <= 0.25) {
+      return text;
+    }
   }
-  return text;
 }
 
 function resolvePlaceholders(string) {
