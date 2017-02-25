@@ -489,7 +489,8 @@ PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
   PLACEHOLDERS.count;
 PLACEHOLDERS.funcname = PLACEHOLDERS.prevname =
   PLACEHOLDERS.objectname = PLACEHOLDERS.propertyname =
-  PLACEHOLDERS.idname = PLACEHOLDERS.name;
+  PLACEHOLDERS.propname = PLACEHOLDERS.idname =
+  PLACEHOLDERS.name;
 PLACEHOLDERS.expectedtype = PLACEHOLDERS.currenttype =
   PLACEHOLDERS.type;
 
