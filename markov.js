@@ -346,7 +346,7 @@ var MESSAGES = [
   "Use ‘===’ to compare with ‘null’",
   "Duplicate key '{{name}}'",
   "Unexpected 'debugger' statement",
-  "Nested block is redundant.",
+  "Nested block is redundant",
   "Block is redundant",
   "Shadowing of global property '{{idName}}'",
   "'{{name}}' was used before it was defined",
