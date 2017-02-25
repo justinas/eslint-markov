@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ESLint gone Markov</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="markov.js" type="text/javascript"></script>
+        <script>
+function refreshLint() {
+    document.querySelector("#lint").textContent = generate();
+}
+document.addEventListener("DOMContentLoaded", function() {
+    refreshLint();
+    document.querySelector("#refresh").addEventListener("click", function() {
+        refreshLint();
+    });
+});
+        </script>
+    </head>
+    <body>
+        <h1>ESLint gone Markov</h1>
+        <h2>What if ESLint had an infinite number of rules?</h2>
+        <div class="pure-g">
+            <div class="pure-u-5-5">
+                <noscript>
+                    <p>This page requires JavaScript. Duh.</p>
+                </noscript>
+                <code id="lint"></code>
+                <button class="pure-button" id="refresh">Refresh</button>
+            </div>
+        </div>
+        <p>
+        <small>
+            <a href="https://github.com/justinas/eslint-markov">Source</a>
+            &middot;
+            <a>FAQ</a>
+        </small>
+        </p>
+    </body>
+</html>
