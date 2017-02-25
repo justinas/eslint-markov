@@ -373,7 +373,7 @@ var MESSAGES = [
   "Closing curly brace appears on the same line as the subsequent block",
   "Designated alias '{{alias}}' is not assigned to 'this'",
   "Unexpected alias '{{name}}' for 'this'"
-].slice(0, 200);
+];
 
 var chains = Object.create(null);
 chains[""] = [];
