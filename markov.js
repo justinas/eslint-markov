@@ -439,6 +439,14 @@ function resolvePlaceholders(string) {
 }
 
 var PLACEHOLDERS = {
+  builtin: function() {
+    return randomChoice([
+      'Object', 'Function', 'Boolean', 'Symbol',
+      'Error', 'Number', 'Math', 'Date',
+      'String', 'RegExp', 'Array', 'Map',
+      'Set',
+    ]);
+  },
   count: function() {
     return Math.floor(Math.random() * 10);
   },
@@ -463,13 +471,13 @@ var PLACEHOLDERS = {
     ]);
   }
 };
+
 PLACEHOLDERS.actualoperator = PLACEHOLDERS.expectedoperator =
   PLACEHOLDERS.operator;
 PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
   PLACEHOLDERS.maxlength = PLACEHOLDERS.maxcommentlength =
-  PLACEHOLDERS.numberofstatementsonthisline =
-  PLACEHOLDERS.maxstatementsperline = PLACEHOLDERS.max =
-  PLACEHOLDERS.count;
+  PLACEHOLDERS.num = PLACEHOLDERS.maxstatementsperline =
+  PLACEHOLDERS.max = PLACEHOLDERS.count;
 PLACEHOLDERS.funcname = PLACEHOLDERS.idname =
   PLACEHOLDERS.importname = PLACEHOLDERS.modulename =
   PLACEHOLDERS.prevname = PLACEHOLDERS.objectname =
