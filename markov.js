@@ -471,7 +471,7 @@ PLACEHOLDERS.depth = PLACEHOLDERS.numberofstatementsonthisline =
   PLACEHOLDERS.maxstatementsperline = PLACEHOLDERS.max =
   PLACEHOLDERS.count;
 PLACEHOLDERS.funcname = PLACEHOLDERS.idname =
-  PLACEHOLDERS.importname =
+  PLACEHOLDERS.importname = PLACEHOLDERS.modulename =
   PLACEHOLDERS.prevname = PLACEHOLDERS.objectname =
   PLACEHOLDERS.property = PLACEHOLDERS.propertyname =
   PLACEHOLDERS.propname = PLACEHOLDERS.idname =
